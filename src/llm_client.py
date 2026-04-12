@@ -1,12 +1,16 @@
 import requests
 import time
 
+from config_loader import load_config
 OLLAMA_URL = "http://localhost:11434/api/generate"
-MODEL = "llama3.1"
+
+config = load_config()
+MODEL = config["model"]["name"]
+TEMPERATURE = config["llm"].get("temperature", 0.2)
+MAX_TOKENS = config["llm"].get("max_tokens", 150)  # default fallback
 
 def call_llm(prompt: str) -> str:
     print("\n📤 Sending request to Ollama...")
-    print(f"Prompt preview:\n{prompt[:200]}...\n")
 
     start = time.time()
 
@@ -15,7 +19,8 @@ def call_llm(prompt: str) -> str:
         "prompt": prompt,
         "stream": False,
          "options": {
-            "num_predict": 150
+            "num_predict": MAX_TOKENS,
+            "temperature": TEMPERATURE
         }
     }
 

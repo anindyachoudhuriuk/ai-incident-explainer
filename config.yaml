@@ -1,0 +1,10 @@
+model:
+  provider: ollama
+  name: llama3.1
+
+llm:
+  temperature: 0.2
+  max_tokens: 500
+
+output:
+  save_results: true
