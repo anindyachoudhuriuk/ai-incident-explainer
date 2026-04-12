@@ -1,0 +1,122 @@
+[
+  {
+    "id": "INC001",
+    "system": "Trade Processing",
+    "error": "NullPointerException at TradeService.java:245",
+    "severity": "HIGH",
+    "timestamp": "2026-01-12T10:15:30Z",
+    "context": "Trade booking failed during peak hours"
+  },
+  {
+    "id": "INC002",
+    "system": "Payments",
+    "error": "TimeoutException: Payment gateway not responding after 30s",
+    "severity": "CRITICAL",
+    "timestamp": "2026-01-13T14:22:10Z",
+    "context": "High volume of international transactions"
+  },
+  {
+    "id": "INC003",
+    "system": "Account Service",
+    "error": "SQLIntegrityConstraintViolationException: Duplicate entry 'ACC123'",
+    "severity": "MEDIUM",
+    "timestamp": "2026-01-14T09:05:44Z",
+    "context": "Duplicate account creation request"
+  },
+  {
+    "id": "INC004",
+    "system": "Risk Engine",
+    "error": "Connection refused: risk-engine.internal:8080",
+    "severity": "CRITICAL",
+    "timestamp": "2026-01-15T11:47:02Z",
+    "context": "Risk scoring unavailable for transactions"
+  },
+  {
+    "id": "INC005",
+    "system": "KYC Verification",
+    "error": "DocumentParsingException: Unable to extract data from uploaded ID",
+    "severity": "HIGH",
+    "timestamp": "2026-01-16T08:33:19Z",
+    "context": "Customer onboarding blocked"
+  },
+  {
+    "id": "INC006",
+    "system": "Trade Settlement",
+    "error": "OutOfMemoryError: Java heap space",
+    "severity": "CRITICAL",
+    "timestamp": "2026-01-17T16:12:55Z",
+    "context": "Batch settlement job failed"
+  },
+  {
+    "id": "INC007",
+    "system": "Fraud Detection",
+    "error": "ModelServiceException: Feature vector missing for transaction",
+    "severity": "HIGH",
+    "timestamp": "2026-01-18T13:41:27Z",
+    "context": "Fraud scoring incomplete"
+  },
+  {
+    "id": "INC008",
+    "system": "Payments",
+    "error": "SSLHandshakeException: Remote host closed connection during handshake",
+    "severity": "HIGH",
+    "timestamp": "2026-01-19T19:25:11Z",
+    "context": "Secure connection failure with external bank"
+  },
+  {
+    "id": "INC009",
+    "system": "Distributed Storage",
+    "error": "ERROR dfs.DataNode: Exception in receiveBlock",
+    "severity": "MEDIUM",
+    "timestamp": "2026-01-20T07:55:03Z",
+    "context": "Block replication issue in storage cluster"
+  },
+  {
+    "id": "INC010",
+    "system": "File System",
+    "error": "WARN FSNamesystem: Failed to allocate block",
+    "severity": "LOW",
+    "timestamp": "2026-01-20T08:01:45Z",
+    "context": "Temporary storage allocation issue"
+  },
+  {
+    "id": "INC011",
+    "system": "API Gateway",
+    "error": "HTTP 502 Bad Gateway from downstream service",
+    "severity": "HIGH",
+    "timestamp": "2026-01-21T12:14:36Z",
+    "context": "Upstream service unavailable"
+  },
+  {
+    "id": "INC012",
+    "system": "Customer Profile",
+    "error": "JsonMappingException: Cannot deserialize value of type `LocalDate`",
+    "severity": "MEDIUM",
+    "timestamp": "2026-01-22T10:10:10Z",
+    "context": "Invalid date format in request payload"
+  },
+  {
+    "id": "INC013",
+    "system": "Trade Processing",
+    "error": "IllegalArgumentException: Invalid trade amount",
+    "severity": "LOW",
+    "timestamp": "2026-01-23T15:44:21Z",
+    "context": "User submitted incorrect trade data"
+  },
+  {
+    "id": "INC014",
+    "system": "Payments",
+    "error": "ConnectionTimeout: External FX rate service not responding",
+    "severity": "HIGH",
+    "timestamp": "2026-01-24T17:02:09Z",
+    "context": "Currency conversion delayed"
+  },
+  {
+    "id": "INC015",
+    "system": "Audit Logging",
+    "error": "DiskFullException: No space left on device",
+    "severity": "CRITICAL",
+    "timestamp": "2026-01-25T21:30:00Z",
+    "context": "Audit logs not being recorded"
+  }
+]

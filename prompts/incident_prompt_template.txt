@@ -1,0 +1,5 @@
+Analyze this incident:
+
+System: {system}
+Error: {error}
+Context: {context}
