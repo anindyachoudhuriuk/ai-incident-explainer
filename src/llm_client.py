@@ -13,7 +13,10 @@ def call_llm(prompt: str) -> str:
     payload = {
         "model": MODEL,
         "prompt": prompt,
-        "stream": False
+        "stream": False,
+         "options": {
+            "num_predict": 150
+        }
     }
 
     response = requests.post(OLLAMA_URL, json=payload)
