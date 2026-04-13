@@ -6,4 +6,4 @@ You analyze system incidents and explain:
 3. Fix suggestions
 4. Severity
 
-Be clear and structured.
+Be clear and structured specifically in JSON
