@@ -49,6 +49,9 @@
   - `save_json()` appends output instead of overwriting, which may cause invalid JSON across runs.
   - Error handling is minimal outside LLM response status check.
 
+## To Do
+- Sequential evaluation of multiple models along with a leaderboard to compare performance and output quality.
+
 ## Potential discussion points
 - How prompt structure influences LLM output quality.
 - Why a system prompt is separated from incident-specific data.
