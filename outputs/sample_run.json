@@ -11,4 +11,69 @@
         "root_cause": "Root cause analysis goes here.",
         "recommendations": "Here is the analysis of the incident in a clear and structured format using JSON:\n\n```json\n{\n  \"incident\": {\n    \"system\": \"Payments\",\n    \"error\": \"TimeoutException: Payment gateway not responding after 30s\"\n  },\n  \"rootCauses\": [\n    {\n      \"cause\": \"High volume of international transactions\",\n      \"description\": \"The high volume of transactions may have caused a bottleneck in the payment gateway, leading to a timeout exception.\",\n      \"likelihood\": \"High\"\n    }\n  ],\n  \"fixSuggestions\": [\n    {\n      \"suggestion\": \"Increase the connection timeout value for the payment gateway\",\n      \"rationale\": \"This would allow the system to wait longer for a response from"
     }
+][
+    {
+        "id": "INC001",
+        "summary": "Summary of incident INC001",
+        "root_cause": "Root cause analysis goes here.",
+        "recommendations": "Dummy"
+    },
+    {
+        "id": "INC002",
+        "summary": "Summary of incident INC002",
+        "root_cause": "Root cause analysis goes here.",
+        "recommendations": "Dummy"
+    }
+][
+    {
+        "id": "INC001",
+        "summary": "Summary of incident INC001",
+        "root_cause": "Root cause analysis goes here.",
+        "recommendations": "Dummy"
+    },
+    {
+        "id": "INC002",
+        "summary": "Summary of incident INC002",
+        "root_cause": "Root cause analysis goes here.",
+        "recommendations": "Dummy"
+    }
+][
+    {
+        "id": "INC001",
+        "summary": "Summary of incident INC001",
+        "what_happened": "NullPointerException occurred in TradeService.java at line 245",
+        "root_cause": "NullPointerException"
+    },
+    {
+        "id": "INC002",
+        "summary": "Summary of incident INC002",
+        "what_happened": "Payment gateway timeout due to high transaction volume",
+        "root_cause": "Insufficient payment gateway capacity"
+    }
+][
+    {
+        "id": "INC001",
+        "summary": "Summary of incident INC001",
+        "what_happened": "Trade booking failed",
+        "root_cause": "NullPointerException"
+    },
+    {
+        "id": "INC002",
+        "summary": "Summary of incident INC002",
+        "what_happened": "Payment gateway timeout during international transactions.",
+        "root_cause": "High transaction volume"
+    }
+][
+    {
+        "id": "INC001",
+        "summary": "Summary of incident INC001",
+        "what_happened": "NullPointerException occurred in TradeService.java:245",
+        "root_cause": "NullPointerException"
+    },
+    {
+        "id": "INC002",
+        "summary": "Summary of incident INC002",
+        "what_happened": "Payment gateway timeout",
+        "root_cause": "Payment gateway unavailability"
+    }
 ]
