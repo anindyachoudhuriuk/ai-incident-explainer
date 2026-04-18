@@ -2,13 +2,13 @@
     {
         "id": "INC001",
         "summary": "Summary of incident INC001",
-        "what_happened": "NullPointerException occurred in TradeService.java at line 245",
+        "what_happened": "",
         "root_cause": "NullPointerException"
     },
     {
         "id": "INC002",
         "summary": "Summary of incident INC002",
-        "what_happened": "Payment gateway timed out",
-        "root_cause": "Payment gateway unavailability"
+        "what_happened": "The payment gateway is not responding after a period of three seconds.",
+        "root_cause": "Payment Gateway Not Responding"
     }
 ]

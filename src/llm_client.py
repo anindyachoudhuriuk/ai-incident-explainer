@@ -1,7 +1,9 @@
+
 import requests
 import time
 
 from config_loader import load_config
+from models import ResponseSchema
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
 config = load_config()
@@ -13,11 +15,12 @@ def call_llm(prompt: str) -> str:
     print("\n📤 Sending request to Ollama...")
 
     start = time.time()
-
+    
     payload = {
         "model": MODEL,
         "prompt": prompt,
         "stream": False,
+        "format": ResponseSchema.model_json_schema(),
          "options": {
             "num_predict": MAX_TOKENS,
             "temperature": TEMPERATURE
@@ -25,9 +28,11 @@ def call_llm(prompt: str) -> str:
     }
 
     response = requests.post(OLLAMA_URL, json=payload)
-
     if response.status_code != 200:
         raise Exception(f"LLM error: {response.text}")
+    
+    response = ResponseSchema.model_validate_json(response.json()["response"])
+   
     end = time.time()
     print(f"Response time: {end - start:.2f} seconds")
-    return response.json()["response"]
+    return response

@@ -1,11 +1,12 @@
 model:
   provider: ollama
-  name: llama3.1
+  name: deepseek-coder:1.3b
 
 llm:
-  temperature: 0.2
-  max_tokens: 150
+  temperature: 0
+  max_tokens: 500
   max_output_tokens: 1000
+  stop: ["```"]
 
 output:
   save_results: true
