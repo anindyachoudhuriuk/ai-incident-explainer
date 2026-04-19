@@ -2,6 +2,9 @@ model:
   provider: ollama
   name: llama3.2:1b
 
+models:
+  - llama3.2:1b
+
 llm:
   temperature: 0
   max_tokens: 500

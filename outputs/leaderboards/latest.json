@@ -1,0 +1,11 @@
+{
+  "models": [
+    {
+      "evaluation": {
+        "model": "llama3.2:1b",
+        "final_score": 62.144999999999996
+      }
+    }
+  ],
+  "best_model": "llama3.2:1b"
+}

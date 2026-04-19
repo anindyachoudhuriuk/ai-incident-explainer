@@ -12,17 +12,17 @@ def build_prompt(system_prompt, template, incident):
 )}
 """
 
-def process_incident(incident, config):
+def process_incident(incident, model):
     # Placeholder for actual processing logic
     # For now, just return a dummy result
-    from llm_client import call_llm
-    from prompt_loader import load_system_prompt, load_template
+    from llms.llm_client import call_llm
+    from llms.prompt_loader import load_system_prompt, load_template
     
     system_prompt = load_system_prompt()
     template = load_template()
     prompt = build_prompt(system_prompt, template, incident)
            
-    response = call_llm(config, prompt)
+    response = call_llm(model, prompt)
     json_data = json.loads(response.json())
         
     return {

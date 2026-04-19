@@ -2,19 +2,20 @@
 import requests
 import time
 
-from config_loader import load_config
 from models.config_models import ModelConfig
 from models.response_models import ResponseSchema
+from config.config_loader import load_config
 
+config = load_config()
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
-def call_llm(config: ModelConfig, prompt: str) -> str:
+def call_llm(model: str, prompt: str) -> str:
     print("\n📤 Sending request to Ollama...")
 
     start = time.time()
     
     payload = {
-        "model": config.model,
+        "model": model,
         "prompt": prompt,
         "stream": False,
         "format": ResponseSchema.model_json_schema(),
