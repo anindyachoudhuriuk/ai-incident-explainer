@@ -11,7 +11,6 @@ from evaluation.metrics import (
 
 def evaluate_output(output: dict) -> EvaluationMetrics:
     return EvaluationMetrics(
-        model=output.get("model", "unknown"),
         structure_score=score_structure(output),
         relevance_score=score_relevance(output),
         detail_score=score_detail(output),
