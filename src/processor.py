@@ -12,7 +12,7 @@ def build_prompt(system_prompt, template, incident):
 )}
 """
 
-def process_incident(incident, model):
+def process_incident(incident, config):
     # Placeholder for actual processing logic
     # For now, just return a dummy result
     from llm_client import call_llm
@@ -22,7 +22,7 @@ def process_incident(incident, model):
     template = load_template()
     prompt = build_prompt(system_prompt, template, incident)
            
-    response = call_llm(model, prompt)
+    response = call_llm(config, prompt)
     json_data = json.loads(response.json())
         
     return {

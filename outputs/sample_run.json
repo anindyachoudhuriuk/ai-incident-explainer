@@ -4,7 +4,7 @@
         "summary": "Summary of incident INC001",
         "what_happened": "Trade service encountered a NullPointerException.",
         "root_cause": "Unknown",
-        "latency_ms": 9177.155256271362,
+        "latency_ms": 10082.399606704712,
         "evaluation": {
             "model": "llama3.2:1b",
             "metrics": {
@@ -12,9 +12,9 @@
                 "relevance_score": 9.8,
                 "detail_score": 1.4,
                 "consistency_score": 80.0,
-                "latency_score": 60.0
+                "latency_score": 30.0
             },
-            "final_score": 74.71000000000001
+            "final_score": 59.71
         }
     },
     {
@@ -22,7 +22,7 @@
         "summary": "Summary of incident INC002",
         "what_happened": "Payment gateway timeout occurred due to high volume of international transactions.",
         "root_cause": "Payment gateway not configured correctly for international transactions",
-        "latency_ms": 10466.978788375854,
+        "latency_ms": 10799.642562866211,
         "evaluation": {
             "model": "llama3.2:1b",
             "metrics": {

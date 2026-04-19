@@ -3,27 +3,24 @@ import requests
 import time
 
 from config_loader import load_config
+from models.config_models import ModelConfig
 from models.response_models import ResponseSchema
 
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
-config = load_config()
-TEMPERATURE = config["llm"].get("temperature", 0.2)
-MAX_TOKENS = config["llm"].get("max_tokens", 150)  # default fallback
-
-def call_llm(model: str, prompt: str) -> str:
+def call_llm(config: ModelConfig, prompt: str) -> str:
     print("\n📤 Sending request to Ollama...")
 
     start = time.time()
     
     payload = {
-        "model": model,
+        "model": config.model,
         "prompt": prompt,
         "stream": False,
         "format": ResponseSchema.model_json_schema(),
          "options": {
-            "num_predict": MAX_TOKENS,
-            "temperature": TEMPERATURE
+            "num_predict": config.max_tokens,
+            "temperature": config.temperature
         }
     }
 

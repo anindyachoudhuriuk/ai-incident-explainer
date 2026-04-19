@@ -15,11 +15,11 @@ def main():
     print(f"Loaded {len(incidents)} incidents.")
     config = load_config()
     results = [] 
-    MODEL = config["model"]["name"]
+
     for i in incidents:
         print(f"Processing incident: {i['id']}")
          # Step 1: LLM processing
-        result = process_incident(i, MODEL)
+        result = process_incident(i, config)
 
         # Step 3: Evaluate
         metrics = evaluate_output(result)
@@ -29,7 +29,7 @@ def main():
 
         # Step 5: Attach evaluation to result
         result["evaluation"] = {
-            "model": MODEL,
+            "model": config.model,
             "metrics": metrics.model_dump(),
             "final_score": final_score
         }
