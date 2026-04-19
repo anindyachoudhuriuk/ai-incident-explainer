@@ -1,6 +1,6 @@
 model:
   provider: ollama
-  name: deepseek-coder:1.3b
+  name: llama3.2:1b
 
 llm:
   temperature: 0

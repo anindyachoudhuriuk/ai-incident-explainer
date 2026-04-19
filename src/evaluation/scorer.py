@@ -6,7 +6,7 @@ WEIGHTS = {
     "relevance": 0.35,
     "detail": 0.2,
     "consistency": 0.2,
-    "latency": 0.4
+    "latency": 0.5
 }
 
 

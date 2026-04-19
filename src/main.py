@@ -5,6 +5,7 @@ from utils import load_json
 from processor import process_incident 
 from evaluation.evaluator import evaluate_output
 from evaluation.scorer import compute_final_score
+from config_loader import load_config
 
 def main():
     print("🚀 AI Incident Explainer starting...")
@@ -12,13 +13,13 @@ def main():
     ROOT = Path(__file__).resolve().parent.parent
     incidents = load_json(ROOT / "data" / "incident_logs.json")
     print(f"Loaded {len(incidents)} incidents.")
-    
+    config = load_config()
     results = [] 
-    
+    MODEL = config["model"]["name"]
     for i in incidents:
         print(f"Processing incident: {i['id']}")
          # Step 1: LLM processing
-        result = process_incident(i)
+        result = process_incident(i, MODEL)
 
         # Step 3: Evaluate
         metrics = evaluate_output(result)
@@ -28,6 +29,7 @@ def main():
 
         # Step 5: Attach evaluation to result
         result["evaluation"] = {
+            "model": MODEL,
             "metrics": metrics.model_dump(),
             "final_score": final_score
         }

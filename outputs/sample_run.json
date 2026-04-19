@@ -2,33 +2,39 @@
     {
         "id": "INC001",
         "summary": "Summary of incident INC001",
-        "what_happened": "",
-        "root_cause": "NullPointerException",
+        "what_happened": "Trade service encountered a NullPointerException.",
+        "root_cause": "Unknown",
+        "latency_ms": 9726.40323638916,
         "evaluation": {
+            "model": "llama3.2:1b",
             "metrics": {
-                "structure_score": 75.0,
-                "relevance_score": 0.0,
-                "detail_score": 4.0,
+                "model": "unknown",
+                "structure_score": 100.0,
+                "relevance_score": 9.8,
+                "detail_score": 1.4,
                 "consistency_score": 80.0,
-                "latency_score": 100.0
+                "latency_score": 60.0
             },
-            "final_score": 75.55
+            "final_score": 74.71000000000001
         }
     },
     {
         "id": "INC002",
         "summary": "Summary of incident INC002",
-        "what_happened": "The payment gateway is not responding after a period of three seconds.",
-        "root_cause": "Payment Gateway Not Responding",
+        "what_happened": "Payment gateway timeout occurred due to high volume of international transactions.",
+        "root_cause": "Payment gateway not configured correctly for international transactions",
+        "latency_ms": 10571.82002067566,
         "evaluation": {
+            "model": "llama3.2:1b",
             "metrics": {
+                "model": "unknown",
                 "structure_score": 100.0,
-                "relevance_score": 14.0,
-                "detail_score": 6.0,
+                "relevance_score": 16.4,
+                "detail_score": 14.2,
                 "consistency_score": 80.0,
-                "latency_score": 100.0
+                "latency_score": 30.0
             },
-            "final_score": 87.1
+            "final_score": 64.58
         }
     }
 ]

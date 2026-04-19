@@ -8,17 +8,16 @@ from models.response_models import ResponseSchema
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
 config = load_config()
-MODEL = config["model"]["name"]
 TEMPERATURE = config["llm"].get("temperature", 0.2)
 MAX_TOKENS = config["llm"].get("max_tokens", 150)  # default fallback
 
-def call_llm(prompt: str) -> str:
+def call_llm(model: str, prompt: str) -> str:
     print("\n📤 Sending request to Ollama...")
 
     start = time.time()
     
     payload = {
-        "model": MODEL,
+        "model": model,
         "prompt": prompt,
         "stream": False,
         "format": ResponseSchema.model_json_schema(),

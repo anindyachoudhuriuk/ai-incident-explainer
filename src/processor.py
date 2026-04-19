@@ -12,7 +12,7 @@ def build_prompt(system_prompt, template, incident):
 )}
 """
 
-def process_incident(incident):
+def process_incident(incident, model):
     # Placeholder for actual processing logic
     # For now, just return a dummy result
     from llm_client import call_llm
@@ -22,14 +22,15 @@ def process_incident(incident):
     template = load_template()
     prompt = build_prompt(system_prompt, template, incident)
            
-    response = call_llm(prompt)
+    response = call_llm(model, prompt)
     json_data = json.loads(response.json())
         
     return {
     "id": incident.get("id"),
     "summary": f"Summary of incident {incident.get('id')}",
     "what_happened": json_data.get("analysis", {}).get("what_happened"),
-    "root_cause": get_first_root_cause(json_data)
+    "root_cause": get_first_root_cause(json_data),
+    "latency_ms": json_data.get("latency_ms")
 }
     
 def get_first_root_cause(json_data):
