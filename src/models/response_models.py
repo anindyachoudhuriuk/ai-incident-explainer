@@ -16,3 +16,4 @@ class Incident(BaseModel):
 class ResponseSchema(BaseModel):
     incident: Incident
     analysis: Analysis
+    latency_ms: float

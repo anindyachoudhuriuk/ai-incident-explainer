@@ -18,3 +18,14 @@ def score_detail(output: dict) -> float:
 def score_consistency(output: dict) -> float:
     # placeholder (can expand with multi-run comparison)
     return 80.0
+
+def score_latency(output: dict) -> float:
+    latency_ms = output.get("latency_ms", 0)
+    if latency_ms < 2000:
+        return 100
+    elif latency_ms < 5000:
+        return 80
+    elif latency_ms < 10000:
+        return 60
+    else:
+        return 30

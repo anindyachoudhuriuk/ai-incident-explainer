@@ -33,7 +33,8 @@ def call_llm(prompt: str) -> str:
         raise Exception(f"LLM error: {response.text}")
     
     response = ResponseSchema.model_validate_json(response.json()["response"])
-   
+    
     end = time.time()
     print(f"Response time: {end - start:.2f} seconds")
+    response.__setattr__("latency_ms", (end - start) * 1000)  # add latency in ms for evaluation
     return response

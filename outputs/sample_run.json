@@ -9,9 +9,10 @@
                 "structure_score": 75.0,
                 "relevance_score": 0.0,
                 "detail_score": 4.0,
-                "consistency_score": 80.0
+                "consistency_score": 80.0,
+                "latency_score": 100.0
             },
-            "final_score": 35.55
+            "final_score": 75.55
         }
     },
     {
@@ -24,9 +25,10 @@
                 "structure_score": 100.0,
                 "relevance_score": 14.0,
                 "detail_score": 6.0,
-                "consistency_score": 80.0
+                "consistency_score": 80.0,
+                "latency_score": 100.0
             },
-            "final_score": 47.099999999999994
+            "final_score": 87.1
         }
     }
 ]
