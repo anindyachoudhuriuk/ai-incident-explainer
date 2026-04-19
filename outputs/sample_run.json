@@ -3,12 +3,30 @@
         "id": "INC001",
         "summary": "Summary of incident INC001",
         "what_happened": "",
-        "root_cause": "NullPointerException"
+        "root_cause": "NullPointerException",
+        "evaluation": {
+            "metrics": {
+                "structure_score": 75.0,
+                "relevance_score": 0.0,
+                "detail_score": 4.0,
+                "consistency_score": 80.0
+            },
+            "final_score": 35.55
+        }
     },
     {
         "id": "INC002",
         "summary": "Summary of incident INC002",
         "what_happened": "The payment gateway is not responding after a period of three seconds.",
-        "root_cause": "Payment Gateway Not Responding"
+        "root_cause": "Payment Gateway Not Responding",
+        "evaluation": {
+            "metrics": {
+                "structure_score": 100.0,
+                "relevance_score": 14.0,
+                "detail_score": 6.0,
+                "consistency_score": 80.0
+            },
+            "final_score": 47.099999999999994
+        }
     }
 ]

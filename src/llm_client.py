@@ -3,7 +3,8 @@ import requests
 import time
 
 from config_loader import load_config
-from models import ResponseSchema
+from models.response_models import ResponseSchema
+
 OLLAMA_URL = "http://localhost:11434/api/generate"
 
 config = load_config()

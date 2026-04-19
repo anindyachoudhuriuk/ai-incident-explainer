@@ -1,4 +1,3 @@
-from ollama import chat
 from pydantic import BaseModel
 
 class RootCause(BaseModel):
