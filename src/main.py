@@ -16,7 +16,7 @@ def analyze_incidents():
     model = load_latest_leaderboard(ROOT)
     
     for i in incidents:
-        print(f"Processing incident: {i['id']}")
+        print(f"Processing incident: {i['id']} with model: {model['best_model']}")
          # Step 1: LLM processing
         result = process_incident(i, model["best_model"])
 

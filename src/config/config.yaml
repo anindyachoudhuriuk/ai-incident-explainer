@@ -4,6 +4,7 @@ model:
 
 models:
   - llama3.2:1b
+  - deepseek-coder:1.3b
 
 llm:
   temperature: 0

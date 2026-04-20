@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from config.config_loader import load_config
-from utils.utils import load_json, save_versioned_leaderboard
+from utils.utils import load_json, save_versioned_leaderboard, ensure_model_ready
 from evaluation.evaluator import evaluate_output
 from evaluation.scorer import compute_final_score
 from llms.processor import process_incident 
@@ -21,7 +21,10 @@ def run_evaluation():
     results = []
 
     for model in models:
-        print(f"\nEvaluating model: {model}")
+        if not ensure_model_ready(model):
+            continue
+
+        print(f"Evaluating model: {model}")
 
         final_scores = 0.0
         start = time.time()
