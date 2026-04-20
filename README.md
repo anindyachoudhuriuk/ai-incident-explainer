@@ -8,13 +8,13 @@ A lightweight prototype that converts incident logs into structured incident ana
    ```bash
    python -m pip install -r requirements.txt
    ```
-2. Run incident analysis:
-   ```bash
-   python -m src.main
-   ```
-3. Run model evaluation and leaderboard generation:
+2. Generate the model leaderboard before analysis (if needed):
    ```bash
    python -m src.evaluate
+   ```
+3. Run incident analysis:
+   ```bash
+   python -m src.main
    ```
 
 ## Repository Layout
@@ -73,6 +73,7 @@ ai-incident-explainer/
 ## What It Does
 
 1. `src/main.py` loads incidents and selects the `best_model` from `outputs/leaderboards/latest.json`.
+   - If `latest.json` is missing, run `python -m src.evaluate` first to generate the leaderboard.
 2. `src/llms.processor.process_incident()` builds a prompt from `src/prompts/system_prompt.txt` and `src/prompts/incident_prompt_template.txt`.
 3. The prompt is sent to Ollama via `src/llms/llm_client.py`.
 4. The response is validated against `src/models/response_models.py`.
