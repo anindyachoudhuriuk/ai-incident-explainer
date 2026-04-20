@@ -1,6 +1,5 @@
 model:
   provider: ollama
-  name: llama3.2:1b
 
 models:
   - llama3.2:1b
