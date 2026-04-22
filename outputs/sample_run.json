@@ -2,37 +2,17 @@
     {
         "id": "INC001",
         "summary": "Summary of incident INC001",
-        "what_happened": "",
-        "root_cause": "NullPointerException",
-        "latency_ms": 8751.18613243103,
-        "evaluation": {
-            "model": "deepseek-coder:1.3b",
-            "metrics": {
-                "structure_score": 75.0,
-                "relevance_score": 0.0,
-                "detail_score": 4.0,
-                "consistency_score": 80.0,
-                "latency_score": 60.0
-            },
-            "final_score": 65.55
-        }
+        "what_happened": "'NullPointerException' at 'TradeService.java:Line Number -1245'. This usually happens when you try to access a method or variable that has not been initialized.",
+        "root_cause": "The line of code where the exception is thrown, in this case,'nullpointexceptionat tradeservicejave:Line Number -1245'",
+        "model": "deepseek-coder:1.3b",
+        "latency_ms": 18595.125198364258
     },
     {
         "id": "INC002",
         "summary": "Summary of incident INC002",
-        "what_happened": "The payment gateway is not responding after a period of three seconds.",
-        "root_cause": "Payment Gateway Not Responding",
-        "latency_ms": 10020.570755004883,
-        "evaluation": {
-            "model": "deepseek-coder:1.3b",
-            "metrics": {
-                "structure_score": 100.0,
-                "relevance_score": 14.0,
-                "detail_score": 6.0,
-                "consistency_score": 80.0,
-                "latency_score": 30.0
-            },
-            "final_score": 62.099999999999994
-        }
+        "what_happened": "'Payment gateway not responding after three seconds'",
+        "root_cause": "The system is experiencing a timeout exception due to high traffic. The payment processing service needs time to respond.",
+        "model": "deepseek-coder:1.3b",
+        "latency_ms": 18794.229745864868
     }
 ]

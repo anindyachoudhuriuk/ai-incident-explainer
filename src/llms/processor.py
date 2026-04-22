@@ -1,28 +1,28 @@
 import json
 
-def build_prompt(system_prompt, template, incident):
-    
-    return f"""
-{system_prompt}
+from llms.prompt_loader import load_incident_prompt
+from models.response_models import ResponseSchema
+from llms.llm_client import call_llm
 
-{template.format(
-    system=incident["system"],
-    error=incident["error"],
-    context=incident["context"]
-)}
-"""
+def build_prompt(incident_prompt, incident):
+    
+    data = {
+    "system": f"{incident['system']}",
+    "error": f"{incident['error']}",
+    "context": f"{incident['context']}"
+    }
+
+    incident_prompt = json.dumps(data, indent=2)
+    return incident_prompt
 
 def process_incident(incident, model):
     # Placeholder for actual processing logic
     # For now, just return a dummy result
-    from llms.llm_client import call_llm
-    from llms.prompt_loader import load_system_prompt, load_template
     
-    system_prompt = load_system_prompt()
-    template = load_template()
-    prompt = build_prompt(system_prompt, template, incident)
+    incident_prompt = load_incident_prompt()
+    prompt = build_prompt(incident_prompt, incident)
            
-    response = call_llm(model, prompt)
+    response = call_llm(model, prompt, ResponseSchema)
     json_data = json.loads(response.json())
         
     return {
@@ -30,6 +30,7 @@ def process_incident(incident, model):
     "summary": f"Summary of incident {incident.get('id')}",
     "what_happened": json_data.get("analysis", {}).get("what_happened"),
     "root_cause": get_first_root_cause(json_data),
+    "model": json_data.get("model"),
     "latency_ms": json_data.get("latency_ms")
 }
     

@@ -2,8 +2,6 @@ from pathlib import Path
 
 from config.config_loader import load_config
 from utils.utils import load_json, save_versioned_leaderboard, ensure_model_ready
-from evaluation.evaluator import evaluate_output
-from evaluation.scorer import compute_final_score
 from llms.processor import process_incident 
 import time
 

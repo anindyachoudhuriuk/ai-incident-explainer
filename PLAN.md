@@ -30,3 +30,4 @@ Feedback Loop
 - Add an LLM judge layer after incident detection to validate, score, or enrich incident summaries and root cause analysis.
 - Implement live log classification from the Kafka stream to produce structured log records before incident detection.
 - Use the structured logs as input to the LLM reasoning layer, enabling better consistency and more reliable downstream analysis.
+- Build drift measurement metrics to monitor model performance and incident output consistency over time.

@@ -3,13 +3,7 @@
     {
       "evaluation": {
         "model": "deepseek-coder:1.3b",
-        "final_score": 63.824999999999996
-      }
-    },
-    {
-      "evaluation": {
-        "model": "llama3.2:1b",
-        "final_score": 62.144999999999996
+        "final_score": 56.2
       }
     }
   ],

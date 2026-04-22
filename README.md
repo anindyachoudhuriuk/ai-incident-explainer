@@ -90,4 +90,5 @@ ai-incident-explainer/
 - The evaluation path is separate: `src/evaluate.py` compares models and populates `outputs/leaderboards/latest.json`.
 - `src/utils/utils.py` currently writes `outputs/sample_run.json` using append mode, so repeated runs may require cleaning the file first.
 - The prompt and evaluation pipeline are intentionally minimal and can be extended with stronger schema validation, richer scoring, or more robust model selection.
+- Next development step: add drift measurement metrics to the evaluation path to detect changes in model performance and output consistency across leaderboard snapshots.
 

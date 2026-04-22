@@ -1,8 +1,8 @@
 model:
   provider: ollama
+  judge: llama3.2:1b
 
 models:
-  - llama3.2:1b
   - deepseek-coder:1.3b
 
 llm:

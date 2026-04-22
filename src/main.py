@@ -19,20 +19,6 @@ def analyze_incidents():
         print(f"Processing incident: {i['id']} with model: {model['best_model']}")
          # Step 1: LLM processing
         result = process_incident(i, model["best_model"])
-
-        # Step 3: Evaluate
-        metrics = evaluate_output(result)
-
-        # Step 4: Score
-        final_score = compute_final_score(metrics)
-
-        # Step 5: Attach evaluation to result
-        result["evaluation"] = {
-            "model": model["best_model"],
-            "metrics": metrics.model_dump(),
-            "final_score": final_score
-        }
-
         results.append(result)
 
     save_json(results, ROOT / "outputs" / "sample_run.json")

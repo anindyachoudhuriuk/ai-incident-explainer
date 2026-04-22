@@ -2,3 +2,7 @@ __pycache__/
 *.pyc
 .env
 .vscode/
+
+# Ignore all generated leaderboard snapshots except the latest one
+outputs/leaderboards/*
+!outputs/leaderboards/latest.json

@@ -2,8 +2,8 @@ from pydantic import BaseModel, Field
 
 class EvaluationMetrics(BaseModel):
     structure_score: float = Field(ge=0, le=100)
-    relevance_score: float = Field(ge=0, le=100)
-    detail_score: float = Field(ge=0, le=100)
+    relevance_score: int = Field(ge=0, le=3)
+    detail_score: float = Field(ge=0, le=3)
     consistency_score: float = Field(ge=0, le=100)
     latency_score: float = Field(ge=0, le=100)
 

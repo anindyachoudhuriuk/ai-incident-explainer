@@ -52,6 +52,7 @@
 - Replace dummy summary and root cause logic with direct schema extraction.
 - Add stronger JSON persistence and file overwrite behavior.
 - Extend scoring to support human-in-the-loop validation or LLM-based judges.
+- Add drift measurement metrics to monitor leaderboard updates and incident output quality over time.
 - Add unit tests for `src/llms.processor`, prompt loading, and leaderboard selection.
 
 ## Current flow

@@ -11,7 +11,7 @@ def load_config(path= ROOT / "config/config.yaml"):
 
     return ModelConfig(
         models = config["models"],
-        model = config["model"]["name"],
+        judgeModel = config["model"]["judge"],
         max_tokens = config["llm"].get("max_tokens", 150),
         temperature = config["llm"].get("temperature", 0.2)
     )
