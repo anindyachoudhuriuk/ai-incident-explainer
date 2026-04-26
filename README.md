@@ -25,36 +25,80 @@ ai-incident-explainer/
 ├── explainer.md
 ├── PLAN.md
 ├── requirements.txt
+│
 ├── data/
 │   ├── incident_logs.json
-│   └── sample_inputs.txt
+│   ├── sample_inputs.txt
+│   └── embeddings_cache.pkl              👈 NEW (performance optimization)
+│
 ├── outputs/
 │   ├── sample_run.json
 │   └── leaderboards/
 │       ├── latest.json
 │       └── leaderboard_<timestamp>.json
+│
+├── review_queue/                          👈 NEW (HITL layer)
+│   └── pending_reviews.json
+│
 ├── src/
 │   ├── main.py
 │   ├── evaluate.py
+│
 │   ├── config/
 │   │   ├── config_loader.py
 │   │   └── config.yaml
+│
 │   ├── llms/
 │   │   ├── llm_client.py
 │   │   ├── processor.py
 │   │   └── prompt_loader.py
+│
+│   ├── ingestion/                         👈 NEW (log layer)
+│   │   ├── log_loader.py
+│   │   ├── parser.py
+│   │   └── normalizer.py
+│
+│   ├── classification/                    👈 NEW (routing layer)
+│   │   ├── rules.py                       # fast keyword rules
+│   │   ├── embeddings.py                  # semantic classification
+│   │   ├── router.py                     # decides rules vs embeddings vs LLM
+│   │   └── pipeline.py
+│
 │   ├── evaluation/
 │   │   ├── evaluator.py
 │   │   ├── metrics.py
-│   │   └── scorer.py
+│   │   ├── scorer.py
+│   │   └── llm_judge.py                   👈 NEW (LLM-as-a-judge)
+│
+│   ├── benchmarking/                      👈 NEW (model comparison)
+│   │   ├── runner.py
+│   │   ├── leaderboard.py
+│   │   └── experiments.py
+│
+│   ├── hitl/                              👈 NEW (human-in-the-loop)
+│   │   ├── reviewer.py
+│   │   ├── labels.py
+│   │   └── queue_manager.py
+│
+│   ├── observability/                     👈 NEW (drift + monitoring)
+│   │   ├── drift_detector.py
+│   │   ├── metrics_store.py
+│   │   └── performance_tracker.py
+│
 │   ├── models/
 │   │   ├── config_models.py
 │   │   ├── evaluation_models.py
-│   │   └── response_models.py
+│   │   ├── response_models.py
+│   │   ├── log_models.py                  👈 NEW
+│   │   └── classification_models.py       👈 NEW
+│
 │   └── utils/
 │       └── utils.py
+│
 └── tests/
-    └── test_processor.py
+    ├── test_processor.py
+    ├── test_classification.py             👈 NEW
+    └── test_evaluation.py                 👈 NEW
 ```
 
 - `data/incident_logs.json` — sample incident records used by the application.
